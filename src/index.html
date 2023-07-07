@@ -325,41 +325,35 @@
           <div class="contacts__right">
             <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form js-form">
 
-              <div class="aside">
-                <h2 class="section-name">Sign up</h2>
+              <h3 class="contacts__title">
+                Оставить заявку
+              </h3>
+              <p class="paragraph contacts__paragraph">
+                Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+              </p>
+
+              <div class="form-group">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Имя" class="form__input form-control"
+                  autocomplete="off" data-validate-field="name" aria-label="Введите имя, используя русский алфавит">
               </div>
 
-              <fieldset>
-                <legend class="contacts__title">
-                  Оставить заявку
-                </legend>
-                <p class="paragraph contacts__paragraph">
-                  Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
-                </p>
+              <div class="form-group">
+                <label for="mail"></label>
+                <input type="text" id="email" name="mail" placeholder="E-mail" class="form__input form-control"
+                  autocomplete="off" data-validate-field="mail" aria-label="Введите адрес электронной почты">
+              </div>
 
-                <div class="form-group">
-                  <label for="name">ИММММЯ</label>
-                  <input type="text" id="name" name="name" placeholder="Имя" class="form__input form-control"
-                    autocomplete="off" data-validate-field="name" aria-label="Введите имя, используя русский алфавит">
-                </div>
+              <div class="form-group form-group-area">
+                <label for="comment"></label>
+                <textarea type="text" id="comment" name="comment" placeholder="Комментарий"
+                  class="form__input form__area form-control" autocomplete="off" data-validate-field="comment"
+                  aria-label="Введите текст"></textarea>
+              </div>
 
-                <div class="form-group">
-                  <label for="mail"></label>
-                  <input type="text" id="email" name="mail" placeholder="E-mail" class="form__input form-control"
-                    autocomplete="off" data-validate-field="mail" aria-label="Введите адрес электронной почты">
-                </div>
-
-                <div class="form-group form-group-area">
-                  <label for="comment"></label>
-                  <textarea type="text" id="comment" name="comment" placeholder="Комментарий"
-                    class="form__input form__area form-control" autocomplete="off" data-validate-field="comment"
-                    aria-label="Введите текст"></textarea>
-                </div>
-
-                <button class="btn form__btn" type="submit">
-                  Отправить
-                </button>
-              </fieldset>
+              <button class="btn form__btn" type="submit">
+                Отправить
+              </button>
             </form>
           </div>
         </div>
