@@ -1,132 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>High Pass</title>
-
-  <link rel="icon" type="image/png" href="resources/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/vendor.css">
-
-  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
-  </script>
-  <script defer src="js/app.js"></script>
-</head>
-
+@@include('partials/head.html')
 
 <body>
 
-  <header class="header">
-  <div class="container header__container">
-    <a class="logo" href="">
-      <svg>
-        <use xlink:href="img/sprite.svg#logo"></use>
-      </svg>
-    </a>
-    <nav class="nav nav-desktop">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#about" class="nav__link">О студии</a>
-        </li>
-        <li class="nav__item">
-          <a href="#projects" class="nav__link">Наши проекты</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Услуги</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Мастер-классы</a>
-        </li>
-        <li class="nav__item">
-          <a href="#contacts" class="nav__link">Контакты</a>
-        </li>
-      </ul>
-    </nav>
-    <ul class="social">
-      <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#insta"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#fb"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#vk"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-    <div class="search">
-      <button class="search__btn" id="call-form-btn">
-        <svg class="search__img">
-          <use xlink:href="img/sprite.svg#search"></use>
-        </svg>
-      </button>
-      <form method="get" class="search__form" aria-label="поиск по сайту">
-        <label class="search__label">
-          <input type="text" placeholder="Что будем искать?" class="search__input">
-        </label>
-        <button class="close-form-btn close" id="close-form-btn" type="button">
-          <svg class="close-img">
-            <use xlink:href="img/sprite.svg#close"></use>
-          </svg>
-        </button>
-      </form>
-    </div>
-  </div>
-  <div class="container for-burger">
-
-    <button class="burger-btn" id="burger" aria-label="раскрытие меню">
-      <span class="burger-btn__line burger-btn__line_top"></span>
-      <span class="burger-btn__line burger-btn__line_middle"></span>
-      <span class="burger-btn__line burger-btn__line_bottom"></span>
-    </button>
-
-    <nav class="nav nav-burger">
-      <ul class="nav__list">
-        <li class="nav__item item-320">
-          <button class="close-nav close" id="close-burger">
-            <svg class="close-img">
-              <use xlink:href="img/sprite.svg#close"></use>
-            </svg>
-          </button>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">О студии</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Наши проекты</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Услуги</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Мастер-классы</a>
-        </li>
-        <li class="nav__item">
-          <a href="" class="nav__link">Контакты</a>
-        </li>
-        <li class="nav__item item-320 phone-number">
-          <a class="phone-number" href="tel:+749542423532">
-            <svg class="phone">
-              <use xlink:href="img/sprite.svg#phone"></use>
-            </svg>
-            +7 (495) 42-423-532</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  @@include('partials/header.html')
 
   <main>
     <!-- HERO -->
@@ -446,35 +325,41 @@
           <div class="contacts__right">
             <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form js-form">
 
-              <h3 class="contacts__title">
-                Оставить заявку
-              </h3>
-              <p class="paragraph contacts__paragraph">
-                Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
-              </p>
-
-              <div class="form-group">
-                <label for="name"></label>
-                <input type="text" id="name" name="name" placeholder="Имя" class="form__input form-control"
-                  autocomplete="off" data-validate-field="name" aria-label="Введите имя, используя русский алфавит">
+              <div class="aside">
+                <h2 class="section-name">Sign up</h2>
               </div>
 
-              <div class="form-group">
-                <label for="mail"></label>
-                <input type="text" id="email" name="mail" placeholder="E-mail" class="form__input form-control"
-                  autocomplete="off" data-validate-field="mail" aria-label="Введите адрес электронной почты">
-              </div>
+              <fieldset>
+                <legend class="contacts__title">
+                  Оставить заявку
+                </legend>
+                <p class="paragraph contacts__paragraph">
+                  Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+                </p>
 
-              <div class="form-group form-group-area">
-                <label for="comment"></label>
-                <textarea type="text" id="comment" name="comment" placeholder="Комментарий"
-                  class="form__input form__area form-control" autocomplete="off" data-validate-field="comment"
-                  aria-label="Введите текст"></textarea>
-              </div>
+                <div class="form-group">
+                  <label for="name">ИММММЯ</label>
+                  <input type="text" id="name" name="name" placeholder="Имя" class="form__input form-control"
+                    autocomplete="off" data-validate-field="name" aria-label="Введите имя, используя русский алфавит">
+                </div>
 
-              <button class="btn form__btn" type="submit">
-                Отправить
-              </button>
+                <div class="form-group">
+                  <label for="mail"></label>
+                  <input type="text" id="email" name="mail" placeholder="E-mail" class="form__input form-control"
+                    autocomplete="off" data-validate-field="mail" aria-label="Введите адрес электронной почты">
+                </div>
+
+                <div class="form-group form-group-area">
+                  <label for="comment"></label>
+                  <textarea type="text" id="comment" name="comment" placeholder="Комментарий"
+                    class="form__input form__area form-control" autocomplete="off" data-validate-field="comment"
+                    aria-label="Введите текст"></textarea>
+                </div>
+
+                <button class="btn form__btn" type="submit">
+                  Отправить
+                </button>
+              </fieldset>
             </form>
           </div>
         </div>
@@ -482,54 +367,7 @@
     </section>
   </main>
 
-  <footer class="footer">
-  <div class="container footer__container">
-    <div class="logo-box">
-      <a class="logo" href="">
-        <svg>
-          <use xlink:href="img/sprite.svg#logo"></use>
-        </svg>
-      </a>
-      <p class="logo-mark">
-        Фотостудия High pass<sup>&reg;</sup> 2018-2020
-      </p>
-    </div>
-    <blockquote class="blockquote">
-      <q class="quote">
-        Которая из моих фотографий самая любимая?<br /> Та, которую я собираюсь снять завтра.
-      </q>
-      <cite class="autor">
-        &copy; Имоджен Каннингем
-      </cite>
-    </blockquote>
-    <div class="social footer__social">
-      <span class="social-mark">
-        Больше интересного:
-      </span>
-      <ul class="social">
-        <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#insta"></use>
-          </svg>
-        </a>
-      </li>
-        <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#fb"></use>
-          </svg>
-        </a>
-      </li>
-        <li class="social__item"><a href="" class="social__link">
-          <svg>
-            <use xlink:href="img/sprite.svg#vk"></use>
-          </svg>
-        </a>
-      </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
+  @@include('partials/footer.html')
 
 </body>
 
