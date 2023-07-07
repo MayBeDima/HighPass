@@ -1,0 +1,147 @@
+@import "vars";
+
+html {
+  font-family: $mainFont, sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.common-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.paragraph {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.cover-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section {
+  margin-bottom: 69px;
+}
+
+.section-heading {
+  font-family: $secondFont, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  color: $mainColor;
+}
+
+.logo {
+  display: block;
+
+  svg {
+    width: 191px;
+    height: 31px;
+  }
+}
+
+.social__link {
+  display: block;
+  height: max-content;
+  width: max-content;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: #cacaca;
+    transition: fill .3s ease;
+
+    path {
+      fill: inherit;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $linkHover;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: $linkActive;
+    }
+  }
+
+  &:focus-visible {
+    svg {
+      fill: $linkFocus;
+    }
+  }
+}
+
+.mark {
+  position: absolute;
+  padding: 7px 15px;
+  background-color: #333;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.btn {
+  display: block;
+  padding: 13px 17px;
+  background-color: $btnColor;
+  color: $secondColor;
+  font-size: 16px;
+  font-weight: 700;
+  border: 3px solid;
+  border-color: $btnColor;
+  cursor: pointer;
+  transition-property: border-color background-color;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: $btnHover;
+    border-color: $btnHover;
+  }
+
+  &:active {
+    background-color: $btnActive;
+    border-color: $btnFocus;
+  }
+
+  &:focus-visible {
+    background-color: $btnFocus;
+    border-color: $btnFocus;
+  }
+}

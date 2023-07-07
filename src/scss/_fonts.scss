@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,700);
+
+@font-face {
+  font-family: 'TTFirs';
+  font-display: swap;
+  src: url(../resources/fonts/TTFirsNeue-Regular.woff2) format('woff2'), url(../resources/fonts/TTFirsNeue-Regular.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTFirs';
+  font-display: swap;
+  src: url(../resources/fonts/TTFirsNeue-Medium.woff2) format('woff2'), url(../resources/fonts/TTFirsNeue-Medium.woff) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTFirs';
+  font-display: swap;
+  src: url(../resources/fonts/TTFirsNeue-Bold.woff2) format('woff2'), url(../resources/fonts/TTFirsNeue-Bold.woff) format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

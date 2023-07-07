@@ -1,0 +1,852 @@
+@mixin for-desktop {
+  @media (min-width: (1025px)) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (max-width: (1440px)) {
+    .header {
+      .nav {
+        &__item:not(:last-child) {
+          margin-right: 33px;
+        }
+      }
+    }
+
+    .projects {
+      &__grid {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 285px 307px 307px;
+        grid-template-areas:
+          "lanscape lanscape man man thing thing thing thing"
+          "fuji fuji fuji fuji fuji retouch retouch retouch"
+          "girl girl girl oblivion oblivion oblivion oblivion oblivion";
+      }
+
+      .card {
+        &__text {
+          width: 100%;
+          margin-bottom: auto;
+
+          // устаревшие свойства для ограничения строк по высоте
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+  }
+}
+
+@mixin tablet {
+  @media (max-width: (1200px)) {
+    .header {
+      .logo {
+        margin-right: 82px;
+      }
+
+      .nav {
+        &__item:not(:last-child) {
+          margin-right: 33px;
+        }
+      }
+
+      .social {
+        display: none;
+      }
+
+      .search {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: (1024px)) {
+    .container {
+      padding: 0 31px;
+    }
+
+    .logo {
+      svg {
+        width: 166px;
+        height: 27px;
+      }
+    }
+
+    .hero {
+      .empty {
+        display: none;
+      }
+
+      &__grid {
+        grid-auto-rows: 623px;
+      }
+
+      &__left_content {
+        padding: 30px;
+        background-image: url(../img/hero/lens1024.jpg);
+      }
+
+      &__title {
+        padding-right: 0;
+        font-size: 34px;
+        line-height: 34px;
+      }
+
+      &__subtitle {
+        margin-bottom: 10px;
+      }
+
+      .right {
+        &__grid {
+          grid-auto-rows: 332px 186px;
+        }
+      }
+    }
+
+    .about {
+      padding: 30px 0 60px 0;
+
+      &__paragraph {
+        padding-right: 4px;
+      }
+
+      &__right {
+        margin-top: -5px;
+      }
+
+      &__bg {
+        flex-grow: 1;
+        margin-bottom: 20px;
+        background-image: url(../img/about/camera1024.jpg);
+      }
+
+      &__field {
+        display: block;
+        padding-bottom: 24px;
+
+        .form-group-about {
+          display: block;
+          max-width: 342px;
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .projects {
+      &__grid {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 285px 307px 307px;
+        grid-row-gap: 24px;
+        grid-template-areas:
+          "lanscape lanscape man man thing thing thing thing"
+          "fuji fuji fuji fuji fuji retouch retouch retouch"
+          "girl girl girl oblivion oblivion oblivion oblivion oblivion";
+      }
+
+      &__item_lanscape {
+        .card {
+          &__text {
+            padding-right: 30px;
+          }
+        }
+      }
+
+      &__item_retouch,
+      &__item_portrait-girl {
+        .card {
+          &__text {
+            // устаревшие свойства для ограничения строк по высоте
+            -webkit-line-clamp: 3;
+          }
+        }
+      }
+
+      .big-card {
+        &__info {
+          position: absolute;
+          top: 35px;
+        }
+      }
+
+      &__item_fuji {
+        .big-card {
+          &__info {
+            bottom: 37px;
+          }
+        }
+      }
+
+      &__mark {
+        padding: 6px 14px;
+        top: 7px;
+        right: 7px;
+      }
+    }
+
+    .contacts {
+      &__grid {
+        grid-template-columns: 61.33% 1fr;
+        grid-template-rows: 467px;
+      }
+
+      &__right {
+        .form {
+          padding-top: 0px;
+        }
+      }
+
+      &__left {
+        .map {
+          .overmap {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            width: 100%;
+            height: 157px;
+            padding: 25px 30px 20px 30px;
+
+            .box {
+              .contacts__address {
+                display: inline-block;
+                max-width: 300px;
+              }
+
+              .contacts__number {
+                display: inline-block;
+                padding: 4px 0 0 6px;
+
+                .phone-number {
+                  color: $btnColor;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      .logo-box {
+        margin-top: 0;
+        margin-right: 14.2%;
+
+        .logo-mark {
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: (956px)) {
+    .container {
+      padding: 0 27px;
+    }
+
+    .header {
+      .logo {
+        margin-right: auto;
+      }
+
+      .nav-desktop {
+        display: none;
+      }
+
+      .for-burger {
+        display: block;
+        background: #4a4a4a;
+        height: 45px;
+
+        .nav {
+          width: 100%;
+          height: 100%;
+
+          &__list {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+          }
+
+          &__item:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .hero {
+      .right {
+        &__heading {
+          font-size: 22px;
+          line-height: 22px;
+        }
+      }
+    }
+
+    .projects {
+      &__grid {
+        grid-template-rows: 265px 307px 307px;
+      }
+    }
+
+    .footer {
+      .logo-box {
+        margin-top: 0;
+        margin-right: auto;
+      }
+
+      .blockquote {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: (768px)) {
+    .hero {
+      .empty {
+        display: block;
+        min-height: 2px;
+      }
+
+      &__grid {
+        grid-auto-rows: 454px;
+      }
+
+      &__left_content {
+        padding: 30px;
+        background-image: url(../img/hero/lens768.jpg);
+      }
+
+      .right {
+        &__grid {
+          grid-auto-rows: 228px 133px;
+        }
+      }
+    }
+
+    .about {
+      &__field {
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+
+    .projects {
+      margin-bottom: 65px;
+
+      &__grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 300px 300px 307px 300px;
+        grid-template-areas:
+          "lanscape lanscape man man thing thing"
+          "fuji fuji fuji fuji fuji fuji"
+          "retouch retouch retouch girl girl girl"
+          "oblivion oblivion oblivion oblivion oblivion oblivion";
+        grid-row-gap: 28px;
+      }
+
+      &__item {
+        .card {
+          &__text {
+            // устаревшие свойства для ограничения строк по высоте
+            -webkit-line-clamp: 3;
+          }
+        }
+      }
+
+      &__item_thing {
+        .card {
+          &__text {
+            // устаревшие свойства для ограничения строк по высоте
+            -webkit-line-clamp: 2;
+          }
+        }
+      }
+
+      &__item_lanscape {
+        .card {
+          &__text {
+            padding-right: 0;
+          }
+        }
+      }
+
+      &__item_fuji {
+        .big-card {
+          &__info {
+            bottom: 30px;
+          }
+        }
+      }
+
+      &__item_oblivion {
+        .big-card {
+          &__info {
+            top: 30px;
+            bottom: 32px;
+          }
+        }
+      }
+    }
+
+    .contacts {
+      &__heading {
+        margin-bottom: 21px;
+      }
+
+      &__grid {
+        display: block;
+        height: max-content;
+      }
+
+      &__left {
+        height: 460px;
+        padding: 0;
+        margin-bottom: 24px;
+
+        .map {
+          .overmap {
+            .box {
+              .contacts__address {
+                display: block;
+                max-width: 450px;
+              }
+
+              .contacts__number {
+                display: block;
+                padding: 4px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+
+      &__right {
+        height: 445px;
+        max-width: 466px;
+      }
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: (630px)) {
+    .container {
+      padding: 0 21px;
+    }
+
+    .hero {
+      .empty {
+        display: none;
+      }
+
+      &__title {
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 26px;
+      }
+
+      &__subtitle {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+    }
+
+    .about {
+      &__paragraph {
+        padding-right: 0;
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+
+    .projects {
+      &__grid {
+        grid-template-rows: 270px 300px 270px 300px;
+      }
+    }
+  }
+
+  @media (max-width: (576px)) {
+    .logo {
+      svg {
+        width: 112px;
+        height: 18px;
+      }
+    }
+
+    .mark {
+      padding: 4px 7px;
+      font-size: 12px;
+      line-height: 14px;
+      top: 5px;
+      right: 5px;
+    }
+
+    .form {
+      &__input {
+        height: 40px;
+
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .btn {
+      padding: 10px 18px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section-heading {
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    .header {
+      margin-bottom: 30px;
+
+      &__container {
+        min-height: 70px;
+      }
+
+      .search {
+        &__btn {
+          width: 20px;
+          height: 20px;
+        }
+
+        &__img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &__form {
+          position: absolute;
+          padding: 0 21px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          transform: translateY(-101%);
+          transition-property: visibility, transform;
+          transition-duration: 0.5s;
+          transition-timing-function: ease;
+          visibility: hidden;
+        }
+
+        .is_active_form {
+          visibility: visible;
+          transform: none;
+        }
+
+        .close {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .for-burger {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .burger-btn {
+          display: flex;
+        }
+
+        .nav-burger {
+          position: absolute;
+          top: 1px;
+          right: 0;
+          height: 541px;
+          padding: 13px 21px 40px 21px;
+          background: $mainColor;
+          transform: translateX(-101%);
+          transition-property: visibility, transform;
+          transition-duration: 0.5s;
+          transition-timing-function: ease;
+          visibility: hidden;
+          z-index: 10;
+
+          .nav__list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .nav__item {
+            margin-bottom: 30px;
+          }
+
+          .nav__item:first-child {
+            margin-bottom: 20px;
+          }
+
+          .nav__item:last-child {
+            margin-top: auto;
+            margin-bottom: 0;
+          }
+
+          .item-320 {
+            display: block;
+          }
+
+          .close-nav {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+          }
+
+          .close-img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .phone-number {
+            display: flex;
+            align-items: center;
+
+            .phone {
+              margin-right: 3px;
+              margin-bottom: 2px;
+              margin-left: 2px;
+              width: 17px;
+              height: 17px;
+            }
+
+            .phone-number {
+              display: flex;
+              align-items: center;
+              font-family: $secondFont;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 21px;
+              color: $btnColor;
+            }
+          }
+        }
+
+        .is_active_nav {
+          visibility: visible;
+          transform: none;
+        }
+      }
+    }
+
+    .hero {
+      &__grid {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+      }
+
+      &__left {
+        height: 422px;
+        margin-bottom: 5px;
+      }
+
+      &__left_content {
+        background-image: url(../img/hero/lens320.jpg);
+      }
+
+      .right {
+        &__heading {
+          margin-bottom: 16px;
+          font-size: 18px;
+          line-height: 18px;
+        }
+
+        &__grid {
+          grid-auto-rows: 186px 105px;
+        }
+      }
+    }
+
+    .about {
+      padding: 33px 0 50px 0;
+
+      &__grid {
+        display: block;
+      }
+
+      &__left {
+        margin-bottom: 27px;
+      }
+
+      &__bg {
+        height: 278px;
+        margin-bottom: 26px;
+        background-image: url(../img/about/camera320.jpg);
+      }
+
+      &__title {
+        font-size: 18px;
+      }
+    }
+
+    .projects {
+      margin-bottom: 47px;
+
+      &__mark {
+        padding: 5px 14px;
+        font-size: 12px;
+        line-height: 14px;
+        top: 5px;
+        right: 5px;
+      }
+
+      &__heading {
+        margin-bottom: 16px;
+      }
+
+      &__grid {
+        grid-template-columns: 100%;
+        grid-template-rows: 278px 278px 278px 422px 300px 300px 422px;
+        grid-template-areas:
+          "lanscape"
+          "man"
+          "thing"
+          "fuji"
+          "retouch"
+          "girl"
+          "oblivion";
+        grid-gap: 26px;
+      }
+
+      .big-card {
+        min-height: 100%;
+
+        &__picture {
+          height: 100%;
+        }
+
+        &__info {
+          top: 196px;
+          left: 30px;
+          right: 30px;
+          bottom: 30px;
+          max-width: 219px;
+        }
+
+        &__text {
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        .card__date {
+          margin-top: 0;
+          margin-bottom: 11px;
+        }
+
+        &__title {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .contacts {
+      margin-bottom: 34px;
+
+      &__heading {
+        margin-bottom: 25px;
+      }
+
+      &__left {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+      }
+
+      &__title {
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      &__left {
+        .map {
+          .overmap {
+            padding: 27px 30px 20px 20px;
+            .box {
+              .contacts__address {
+                font-size: 14px;
+                line-height: 18px;
+              }
+
+              .contacts__number {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                margin-left: -3px;
+
+                .phone-number {
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__right {
+        .contacts__title {
+          margin-bottom: 9px;
+        }
+      }
+
+      &__paragraph {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .form {
+        height: 429px;
+        padding-top: 0;
+
+        &__area {
+          resize: none;
+          height: 100%;
+          padding-top: 15px;
+        }
+      }
+    }
+
+    .footer {
+      &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      &__social {
+        padding: 32px 0 28px 0;
+      }
+
+      .logo-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin-top: 0;
+        margin-right: 0;
+        padding: 13px 0;
+        background: #4a4a4a;
+
+        .logo-mark {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
